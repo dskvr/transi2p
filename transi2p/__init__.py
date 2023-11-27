@@ -1,9 +1,10 @@
-from twisted.internet import protocol, reactor, defer
+from twisted.internet import protocol, reactor
 from twisted.internet.endpoints import clientFromString, connectProtocol
 from twisted.names import dns, error
 import socket
 import struct
 import re
+import asyncio
 
 ip_re = re.compile(r'^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$')
 socket.SO_ORIGINAL_DST = 80
@@ -70,11 +71,10 @@ class EepConnection(protocol.Protocol):
         self.proxy.i2p_error(reason)
 
 class TransPort(protocol.Protocol):
-    def connectionMade(self):
+    async def connectionMade(self):
         self.pending = b''
         self.i2p = None
 
-        # get the ip address they're trying to connect to and open connection
         addr = self.transport.socket.getsockopt(socket.SOL_IP, socket.SO_ORIGINAL_DST, 16)
         _, self.dst_port, self.dst_addr, _ = struct.unpack('>HH4s8s', addr)
         self.dst_addr = socket.inet_ntoa(self.dst_addr)
@@ -85,9 +85,8 @@ class TransPort(protocol.Protocol):
             return
 
         endpoint = clientFromString(reactor, 'i2p:' + name)
-        connection = connectProtocol(endpoint, EepConnection(self))
-        connection.addCallback(self.i2p_connected)
-        connection.addErrback(self.i2p_error)
+        i2p_connection = await connectProtocol(endpoint, EepConnection(self))
+        self.i2p_connected(i2p_connection)
 
     def dataReceived(self, data):
         if self.i2p:
@@ -104,8 +103,7 @@ class TransPort(protocol.Protocol):
 
     def i2p_connected(self, i2p):
         self.i2p = i2p
-
         if self.pending:
             self.i2p.transport.write(self.pending)
 
-address_map = None
+address_map = AddressMap('10.18.0.0', {'10.18.0.1': 'stats.i2p'})
