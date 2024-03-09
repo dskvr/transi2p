@@ -1,0 +1,61 @@
+version: "3"
+services:
+  # tor:
+  #   image: osminogin/tor-simple:latest
+  #   container_name: tor_daemon
+  #   ports:
+  #     - "9050:9050" # SOCKS port
+  #     - "5353:5353" # DNSPort, as specified in your Tor configuration
+  #   environment:
+  #     - "DNSPort=5353"
+  #     - "VirtualAddrNetworkIPv4=10.192.0.0/16"
+  #     - "AutomapHostsOnResolve=1"
+  #     - "TransPort=9040"
+  #   volumes:
+  #     - ./tor-config:/etc/tor
+  #   networks:
+  #     - i2ptorproxy
+  tor:
+    image: dperson/torproxy
+    restart: always
+    ports:
+      - '8118:8118'
+      - '9050:9050'
+      - "5353:5353"
+    environment:
+      - "DNSPort=5353"
+      - "VirtualAddrNetworkIPv4=10.192.0.0/16"
+      - "AutomapHostsOnResolve=1"
+      - "TransPort=9040"
+    networks:
+      - i2ptorproxy
+
+  proxy:
+    image: transi2p:latest
+    container_name: transi2p
+    cap_add:
+      - NET_ADMIN
+    # volumes:
+    #   - ./config.json:/etc/transi2p/config.json:ro
+    depends_on:
+      - tor
+    networks:
+      - i2ptorproxy
+
+  strfry:
+    container_name: strfry
+    image: dockurr/strfry:latest
+    ports:
+      - 7777:7777
+    volumes:
+      - ./strfry-db:/app/strfry-db
+      - ./strfry.conf:/etc/strfry.conf
+      - ./whitelist.js:/app/whitelist.js
+    depends_on:
+      - proxy
+    networks:
+      - i2ptorproxy
+
+networks:
+  i2ptorproxy:
+    driver: bridge

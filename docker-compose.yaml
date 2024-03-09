@@ -1,0 +1,50 @@
+version: "3"
+services:
+  transi2p:
+    build: .
+    container_name: transi2p
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - 7679:7679
+      - 5354:5354
+      - 7657:7657
+    volumes:
+      - ./config.json:/etc/transi2p/config.json:ro
+      - ./logs:/var/log/transi2p/:rw
+    depends_on:
+      - tor
+    dns:
+      - 8.8.8.8
+  # tor:
+  #   image: dperson/torproxy
+  #   restart: always
+  #   ports:
+  #     - '8118:8118'
+  #     - '9050:9050'
+  #     # - "5353:5353"
+  #   # environment:
+  #   #   - "DNSPort=5353 IsolateClientAddr IsolateClientProtocol IsolateDestAddr IsolateDestPort"
+  #     # - "VirtualAddrNetworkIPv4=10.192.0.0/16"
+  #     # - "AutomapHostsOnResolve=1"
+  #     # - "TransPort=9040"
+  #   dns:
+  #     - 8.8.8.8
+  #
+  #   image: osminogin/tor-simple:latest
+  #   container_name: tor_daemon
+  #   ports:
+  #     - "9040:9040"
+  #     - "9050:9050" # SOCKS port
+  #     - "5353:5353" # DNSPort, as specified in your Tor configuration
+  #   # environment:
+  #   #   - "DNSPort=5353"
+  #   #   - "VirtualAddrNetworkIPv4=10.192.0.0/16"
+  #   #   - "AutomapHostsOnResolve=1"
+  #   #   - "TransPort=9040"
+  #   volumes:
+  #     - ./tor/config:/etc/tor:ro
+  #     # - ./tor/data/:/var/lib/tor:rw
+  #     # - ./tor/log/:/var/log/tor:rw
+  #   dns:
+  #     - 8.8.8.8

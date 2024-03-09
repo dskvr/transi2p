@@ -44,7 +44,9 @@ class TransServiceMaker(object):
         print(f'listening on transparent: {config["listen"]}:{config["trans_port"]}')
         internet.TCPServer(config['trans_port'], trans_port, interface=config['listen']).setServiceParent(i2pservice)
 
-        ns = server.DNSServerFactory(clients=[transi2p.EepNS(), client.Resolver(servers=config['resolvers'])])
+        eepns_resolver = transi2p.EepNS(config['resolvers'])
+        ns = server.DNSServerFactory(clients=[eepns_resolver, client.Resolver(servers=config['resolvers'])])
+        
         print(f'listening on DNS: {config["listen"]}:{config["dns_port"]}')
         internet.UDPServer(config['dns_port'], dns.DNSDatagramProtocol(controller=ns), interface=config['listen']).setServiceParent(i2pservice)
 

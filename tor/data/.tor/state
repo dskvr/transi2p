@@ -1,0 +1,66 @@
+# Tor state file last generated on 2023-11-27 10:03:09 local time
+# Other times below are in UTC
+# You *do not* need to edit this file.
+
+CircuitBuildTimeBin 95 1
+CircuitBuildTimeBin 135 1
+CircuitBuildTimeBin 165 1
+CircuitBuildTimeBin 365 1
+CircuitBuildTimeBin 435 1
+CircuitBuildTimeBin 455 1
+CircuitBuildTimeBin 465 1
+CircuitBuildTimeBin 535 1
+CircuitBuildTimeBin 575 1
+CircuitBuildTimeBin 585 2
+CircuitBuildTimeBin 595 1
+CircuitBuildTimeBin 665 1
+CircuitBuildTimeBin 705 1
+CircuitBuildTimeBin 775 1
+CircuitBuildTimeBin 825 1
+CircuitBuildTimeBin 855 1
+CircuitBuildTimeBin 865 1
+CircuitBuildTimeBin 935 1
+CircuitBuildTimeBin 955 1
+CircuitBuildTimeBin 965 2
+CircuitBuildTimeBin 985 2
+CircuitBuildTimeBin 1035 1
+CircuitBuildTimeBin 1065 1
+CircuitBuildTimeBin 1085 1
+CircuitBuildTimeBin 1185 1
+CircuitBuildTimeBin 1305 1
+CircuitBuildTimeBin 1315 2
+CircuitBuildTimeBin 1375 1
+CircuitBuildTimeBin 1395 1
+CircuitBuildTimeBin 1485 1
+CircuitBuildTimeBin 1705 1
+CircuitBuildTimeBin 1725 1
+CircuitBuildTimeBin 1825 1
+CircuitBuildTimeBin 1835 1
+CircuitBuildTimeBin 2145 1
+CircuitBuildTimeBin 2245 1
+CircuitBuildTimeBin 5075 1
+CircuitBuildTimeBin 20075 1
+Dormant 0
+Guard in=default rsa_id=6E5F1BE327BFA07D4A6E9D930315E906A4C641DB nickname=wandjina sampled_on=2023-11-16T12:53:28 sampled_idx=0 sampled_by=0.4.8.9 listed=1 confirmed_on=2023-11-22T23:18:48 confirmed_idx=0 pb_use_attempts=1.000000 pb_use_successes=1.000000 pb_circ_attempts=11.000000 pb_circ_successes=11.000000 pb_successful_circuits_closed=10.000000 pb_collapsed_circuits=1.000000
+Guard in=default rsa_id=A932CEA53FCAF5B0A632E36CC5704A665304762F nickname=TheJabulani sampled_on=2023-11-21T13:24:59 sampled_idx=1 sampled_by=0.4.8.9 listed=1 confirmed_on=2023-11-17T12:17:36 confirmed_idx=1 pb_circ_attempts=11.000000 pb_circ_successes=11.000000 pb_successful_circuits_closed=11.000000
+Guard in=default rsa_id=10761183265E627529BC250B6A6645ED980D9697 nickname=jstark1809tm sampled_on=2023-11-25T01:48:27 sampled_idx=2 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=0CAA2E9044A86B11915C413B5A0911DF29E9A1AC nickname=cray sampled_on=2023-11-25T08:37:36 sampled_idx=3 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=A9BEA2E0699D1F60521C8A1167340945A419D102 nickname=alxu3 sampled_on=2023-11-20T00:16:51 sampled_idx=4 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=DAE65AD32A074CECB30AD3FBB7504F0CDC616CD1 nickname=pablito sampled_on=2023-11-23T17:29:12 sampled_idx=5 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=E975F09B4A4E3CDEB11C951EAA1292DEFB515E1A nickname=3raserRelay03 sampled_on=2023-11-24T20:12:03 sampled_idx=6 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=133BBDA007B04F3EF3BAFEF9DE204425984CA841 nickname=DemonHunter sampled_on=2023-11-19T03:34:18 sampled_idx=7 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=7A319C431F38CB30A0BC0C49144369A611920725 nickname=BahnhufPowah2 sampled_on=2023-11-17T21:09:15 sampled_idx=8 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=36D81EAF658AB4ADCC21FB7F4F2A99B24C748BB0 nickname=only2 sampled_on=2023-11-18T22:05:12 sampled_idx=9 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=29100F9EEEB3B9FFC645E05552CD9F388B831782 nickname=fsckinggoogle sampled_on=2023-11-19T15:44:07 sampled_idx=10 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=E00DFD54DC165D5452FBD3530D30186DAD016A0C nickname=despacitor sampled_on=2023-11-23T13:23:53 sampled_idx=11 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=C9C1D11A40D6F42C1942CACED6CF7AE270065A4C nickname=remember300baud sampled_on=2023-11-19T00:55:48 sampled_idx=12 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=57D0B5A215824CF1A7414DE61B6559C09526759F nickname=chuckles sampled_on=2023-11-23T13:37:48 sampled_idx=13 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=B9F69F144DF5BE2FD92DDBF9E67C659ECC5E539B nickname=Vanbo sampled_on=2023-11-24T00:40:19 sampled_idx=14 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=6ED76B2B9EDE932C87861A1B1A0F92D8CC6D297D nickname=h2961181 sampled_on=2023-11-18T13:14:56 sampled_idx=15 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=FCCCECDC44273C67FB374200138464F38DDF39AC nickname=shrimpmaster sampled_on=2023-11-22T04:22:27 sampled_idx=16 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=B143D439B72D239A419F8DCE07B8A8EB1B486FA7 nickname=wardsback sampled_on=2023-11-16T11:02:58 sampled_idx=17 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=54713A1E54A819E3C6CC0EBCAF725F285640F252 nickname=Audrey sampled_on=2023-11-26T14:15:56 sampled_idx=18 sampled_by=0.4.8.9 listed=1
+Guard in=default rsa_id=B0627074CE32145FA7C6399197E5BC638250DC4D nickname=RedHeadMiddleChild1 sampled_on=2023-11-25T07:34:51 sampled_idx=19 sampled_by=0.4.8.9 listed=1
+LastWritten 2023-11-27 10:03:09
+TorVersion Tor 0.4.8.9
+TotalBuildTimes 42
